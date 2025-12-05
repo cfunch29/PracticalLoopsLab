@@ -6,17 +6,16 @@
 // If a number is not divisible by either 3 or 5, log the number.
 
 for (let x= 1; x <= 100; x++){
-    console.log(x);
-    if (x % 3 == 0 && x % 5 == 0);{
-    console.log("Fizz Buzz")
+    if (x % 3 == 0 && x % 5 == 0){
+    console.log("Fizz Buzz");
     }
-    else if (x % 3 !==0 || x % 5 !==0);{
-        console.log(x)
+    else if (x % 3 == 0){
+        console.log("Fizz");
     }
-    else if (x % 3 ==0);{
-        console.log("Fizz")
+    else if (x % 5 == 0){
+        console.log("Buzz");
     }
-    else (x % 5 ==0);{
-        console.log("Buzz")
+    else {
+        console.log(x);
     }
 }
