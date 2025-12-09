@@ -1,15 +1,50 @@
-let str = 'ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26';
-    console.log(str);
-    {
-        for (let x = 0; x < str.length; x++)
-            if (str[x] == "/n"){
-                continue;
+let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+// console.log(str);
 
-            }
+// console.log(cell1, cell2, cell3, cell4);
+// empty string to concat
+let cell1 = "";
+let cell2 = "";
+let cell3 = "";
+let cell4 = "";
+let commas = 0;
+
+// comma - separate cells
+// \n - separate row/line
+// char - everything else - bottom 
+
+// create variables for new row and new cells
+for (let i = 0; i < str.length; i++) {
+
+    // saving current char at the current index into a variable for ease
+    let current = str[i];
+
+    if (current == ",") {
+        // move to the next cell
+        console.log("Comma");
+        commas++
     }
-
-
-    let cell1 = " ";
-    let cell2 = " ";
-    let cell3 = " ";
-    let cell4 = " ";
+    else if (current == "\n") {
+        // Print all cells
+        console.log("New Row");
+        commas = 0;
+        cell1 = "";
+        cell2 = "";
+        cell3 = "";
+        cell4 = "";
+    } else {
+        if (commas == 0) {
+            cell1 += current;
+        } else if (commas == 1) {
+            cell2 += current;
+        } else if (commas = 2) {
+            cell3 += current;
+        } else {
+            cell4 += current;
+            console.log(current);
+        }
+    }
+    if(i +1 == str.length){
+        console.log(cell1, cell2, cell3, cell4);
+    }
+}
